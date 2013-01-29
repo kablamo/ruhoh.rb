@@ -24,6 +24,7 @@ class Ruhoh
                page.change(post_id)
                xml.item {
                  xml.title_ post['title']
+                 xml.author_ Ruhoh::DB.site['author']['name']
                  xml.link "#{Ruhoh::DB.site['config']['production_url']}#{post['url']}"
                  xml.pubDate_ post['date']
                  xml.description_ (post['description'] ? post['description'] : page.render)
